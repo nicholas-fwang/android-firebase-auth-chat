@@ -8,6 +8,4 @@
 /captures
 .externalNativeBuild
 /app/google-services.json
-/app/
-app/libs/
-app/src/main/res/drawable/
+/app/src/main/res/values/strings.xml
