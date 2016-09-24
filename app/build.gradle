@@ -1,0 +1,71 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId "io.fisache.firebase_auth_chat"
+        minSdkVersion 21
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    productFlavors {
+        mock {
+            applicationIdSuffix = ".mock"
+        }
+        prod {
+
+        }
+    }
+
+    android.variantFilter { variant ->
+        if (variant.buildType.name.equals('release')
+                && variant.getFlavors().get(0).name.equals('mock')) {
+            variant.setIgnore(true);
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+configurations.all {
+    resolutionStrategy {
+        force rootProject.ext.supportAnnotations
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Android dependencies
+    compile rootProject.ext.supportV7
+    compile rootProject.ext.supportDesign
+    compile rootProject.ext.supportRecycler
+    compile rootProject.ext.supportAnnotations
+
+    apt rootProject.ext.daggerCompiler
+    provided rootProject.ext.javax
+    compile rootProject.ext.dagger
+
+    compile rootProject.ext.timber
+    compile rootProject.ext.guava
+    compile rootProject.ext.butterKnife
+
+    // Data dependencies
+    compile rootProject.ext.picasso
+
+    // Firebase Authentication
+    compile "com.google.firebase:firebase-auth:${rootProject.ext.FIREBASE_VERSION}"
+    compile "com.google.android.gms:play-services:${rootProject.ext.FIREBASE_VERSION}"
+    compile 'com.facebook.android:facebook-android-sdk:4.+'
+}
+apply plugin: 'com.google.gms.google-services'
