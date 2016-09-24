@@ -4,14 +4,116 @@
     android:id="@+id/activity_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="io.fisache.firebase_auth_chat.LoginActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+        <ProgressBar
+            android:id="@+id/pbLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_gravity="center">
+                <ImageView
+                    android:id="@+id/icEmail"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/ic_login_email"/>
+                <EditText
+                    android:id="@+id/etEmail"
+                    android:layout_toRightOf="@id/icEmail"
+                    android:layout_marginLeft="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#000000"
+                    android:hint="E-mail"/>
+                <TextView
+                    android:id="@+id/tvErEmail"
+                    android:layout_below="@id/etEmail"
+                    android:visibility="invisible"
+                    android:layout_toRightOf="@id/icEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorError"
+                    android:text="Rewrite your E-mail"/>
+            </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="12dp" >
+            <ImageView
+                android:id="@+id/icPassword"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_login_password"/>
+            <EditText
+                android:id="@+id/etPw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/icPassword"
+                android:layout_marginLeft="4dp"
+                android:inputType="textPassword"
+                android:backgroundTint="@color/colorGuest"
+                android:hint="password"/>
+            <TextView
+                android:id="@+id/tvErPw"
+                android:layout_below="@id/etPw"
+                android:layout_toRightOf="@id/icPassword"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorError"
+                android:text="Rewrite your password"/>
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/btn_login"
+            android:textColor="#2b84a0"
+            android:text="Login"/>
+        <Button
+            android:id="@+id/btnFb"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/btn_login"
+            android:text="Login with facebook"/>
+
+        <Button
+            android:id="@+id/btnGl"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/btn_login"
+            android:text="Login with Google"/>
+
+    </LinearLayout>
 </RelativeLayout>
