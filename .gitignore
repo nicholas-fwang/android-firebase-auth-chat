@@ -7,4 +7,7 @@
 /build
 /captures
 .externalNativeBuild
-google-service.json
+/app/google-services.json
+/app/
+app/libs/
+app/src/main/res/drawable/
