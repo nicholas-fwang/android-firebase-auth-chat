@@ -52,5 +52,9 @@ dependencies {
     compile "com.google.firebase:firebase-auth:${rootProject.ext.FIREBASE_VERSION}"
     compile "com.google.android.gms:play-services:${rootProject.ext.FIREBASE_VERSION}"
     compile 'com.facebook.android:facebook-android-sdk:4.+'
+
+    // Test dependencies
+    testCompile rootProject.ext.junit
+    testCompile rootProject.ext.supportAnnotations
 }
 apply plugin: 'com.google.gms.google-services'
