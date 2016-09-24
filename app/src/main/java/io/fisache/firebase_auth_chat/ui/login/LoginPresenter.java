@@ -204,18 +204,7 @@ public class LoginPresenter implements BasePresenter {
                 new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-//                        String remoteUsername = dataSnapshot.getKey();
                         boolean exists = dataSnapshot.exists();
-                        Log.d("fisache", "username " + exists);
-//                        if(remoteUsername == null) {
-//                            activity.showLoading(false);
-//                            user.setUsername(username);
-//                            userService.createUser(user);
-//                            activity.showLoginSuccess(user);
-//                        } else {
-//                            activity.showLoading(false);
-//                            activity.showExistUsername(user, username);
-//                        }
                         if(!exists) {
                             activity.showLoading(false);
                             user.setUsername(username);

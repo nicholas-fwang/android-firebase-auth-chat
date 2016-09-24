@@ -116,6 +116,7 @@ public class LoginActivity extends BaseActivity {
         addAlertDialog.setMessage("Be sure to enter");
 
         final EditText etUsername = new EditText(this);
+        etUsername.setSingleLine();
         addAlertDialog.setView(etUsername);
 
         addAlertDialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {

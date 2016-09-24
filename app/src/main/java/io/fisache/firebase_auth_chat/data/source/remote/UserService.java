@@ -5,6 +5,7 @@ import android.app.Application;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import io.fisache.firebase_auth_chat.data.model.Friend;
 import io.fisache.firebase_auth_chat.data.model.User;
 
 public class UserService {
@@ -18,7 +19,7 @@ public class UserService {
 
     public void createUser(User user) {
         databaseRef.child("users").child(user.getUid()).setValue(user);
-        databaseRef.child("usernames").child(user.getUsername()).setValue(user.getUid());
+        databaseRef.child("usernames").child(user.getUsername()).setValue(user);
 
     }
 
