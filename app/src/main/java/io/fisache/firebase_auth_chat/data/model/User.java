@@ -9,6 +9,7 @@ import com.google.firebase.auth.UserInfo;
 
 public class User {
     @NonNull String uid;
+    @Nullable String nickname;
     @Nullable String email;
     @VisibleForTesting
     @Nullable String password;
@@ -45,8 +46,9 @@ public class User {
         this.uid = uid;
     }
 
-    public User(String uid, String email, String provider, String photo_url, String name) {
+    public User(String uid, String nickname, String email, String provider, String photo_url, String name) {
         this.uid = uid;
+        this.nickname = nickname;
         this.email = email;
         this.provider = provider;
         this.photo_url = photo_url;
@@ -96,5 +98,14 @@ public class User {
 
     public void setProvider(@Nullable String provider) {
         this.provider = provider;
+    }
+
+    @Nullable
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 }

@@ -6,6 +6,15 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp">
 
+
+    <ImageView
+        android:id="@+id/ivAvatar"
+        android:src="@drawable/ic_not_profile"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true" />
+
     <TextView
         android:id="@+id/tvMessage"
         android:layout_width="wrap_content"
@@ -15,12 +24,4 @@
         android:gravity="center"
         android:textSize="24dp"
         android:text="Message"/>
-
-    <ImageView
-        android:id="@+id/ivAvatar"
-        android:src="@drawable/ic_not_profile"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true" />
 </RelativeLayout>

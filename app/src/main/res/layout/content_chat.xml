@@ -19,16 +19,16 @@
         android:layout_height="40dp"
         android:background="#ffffff"
         android:layout_alignParentBottom="true">
+        <EditText
+            android:id="@+id/etMessage"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:hint="message" />
         <Button
             android:id="@+id/btnSend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/etMessage"
             android:text="Send"/>
-        <EditText
-            android:id="@+id/etMessage"
-            android:layout_width="300dp"
-            android:layout_height="match_parent"
-            android:hint="message" />
     </RelativeLayout>
 </RelativeLayout>

@@ -4,7 +4,7 @@
     android:id="@+id/activity_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="io.fisache.firebase_auth_chat.LoginActivity">
+    tools:context="io.fisache.firebase_auth_chat.ui.login.LoginActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,6 +19,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/llLogin"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -43,15 +44,6 @@
                     android:layout_height="wrap_content"
                     android:backgroundTint="#000000"
                     android:hint="E-mail"/>
-                <TextView
-                    android:id="@+id/tvErEmail"
-                    android:layout_below="@id/etEmail"
-                    android:visibility="invisible"
-                    android:layout_toRightOf="@id/icEmail"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/colorError"
-                    android:text="Rewrite your E-mail"/>
             </RelativeLayout>
 
         <RelativeLayout
@@ -74,15 +66,6 @@
                 android:inputType="textPassword"
                 android:backgroundTint="@color/colorGuest"
                 android:hint="password"/>
-            <TextView
-                android:id="@+id/tvErPw"
-                android:layout_below="@id/etPw"
-                android:layout_toRightOf="@id/icPassword"
-                android:visibility="invisible"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/colorError"
-                android:text="Rewrite your password"/>
         </RelativeLayout>
 
         <Button
