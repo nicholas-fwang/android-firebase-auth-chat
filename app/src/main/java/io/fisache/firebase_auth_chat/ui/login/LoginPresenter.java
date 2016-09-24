@@ -166,8 +166,8 @@ public class LoginPresenter implements BasePresenter {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         User remoteUser = dataSnapshot.getValue(User.class);
-                        if(remoteUser == null || remoteUser.getNickname() == null) {
-                            activity.showInsertNickname(user);
+                        if(remoteUser == null || remoteUser.getUsername() == null) {
+                            activity.showInsertUsername(user);
                         } else {
                             activity.showLoginSuccess(remoteUser);
                         }
@@ -197,9 +197,42 @@ public class LoginPresenter implements BasePresenter {
                 });
     }
 
-    public void createUser(User user, String nickname) {
-        user.setNickname(nickname);
-        userService.createUser(user);
-        activity.showLoginSuccess(user);
+
+    public void createUser(final User user, final String username) {
+        activity.showLoading(true);
+        userService.getUserByUsername(username).addListenerForSingleValueEvent(
+                new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+//                        String remoteUsername = dataSnapshot.getKey();
+                        boolean exists = dataSnapshot.exists();
+                        Log.d("fisache", "username " + exists);
+//                        if(remoteUsername == null) {
+//                            activity.showLoading(false);
+//                            user.setUsername(username);
+//                            userService.createUser(user);
+//                            activity.showLoginSuccess(user);
+//                        } else {
+//                            activity.showLoading(false);
+//                            activity.showExistUsername(user, username);
+//                        }
+                        if(!exists) {
+                            activity.showLoading(false);
+                            user.setUsername(username);
+                            userService.createUser(user);
+                            activity.showLoginSuccess(user);
+                        } else {
+                            activity.showLoading(false);
+                            activity.showExistUsername(user, username);
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        activity.showLoading(false);
+                        activity.showInsertUsername(user);
+                    }
+                }
+        );
     }
 }

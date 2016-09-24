@@ -46,7 +46,7 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        Log.d("fisache", user.getNickname() + " " + user.getEmail() + " " + user.getName());
+        Log.d("fisache", user.getUsername() + " " + user.getEmail() + " " + user.getName());
     }
 
     @Override

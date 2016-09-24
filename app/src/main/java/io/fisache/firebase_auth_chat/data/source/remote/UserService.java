@@ -18,10 +18,16 @@ public class UserService {
 
     public void createUser(User user) {
         databaseRef.child("users").child(user.getUid()).setValue(user);
+        databaseRef.child("usernames").child(user.getUsername()).setValue(user.getUid());
+
     }
 
     public DatabaseReference getUser(String userUid) {
         return databaseRef.child("users").child(userUid);
+    }
+
+    public DatabaseReference getUserByUsername(String username) {
+        return databaseRef.child("usernames").child(username);
     }
 
     public void updateUser(User user) {

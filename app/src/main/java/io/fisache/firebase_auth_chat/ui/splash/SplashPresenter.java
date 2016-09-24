@@ -57,7 +57,7 @@ public class SplashPresenter implements BasePresenter {
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         User user = dataSnapshot.getValue(User.class);
 
-                        if(user == null || user.getNickname() == null) {
+                        if(user == null || user.getUsername() == null) {
                             activity.showLoginActivity();
                         } else {
                             activity.showMainActivity(user);

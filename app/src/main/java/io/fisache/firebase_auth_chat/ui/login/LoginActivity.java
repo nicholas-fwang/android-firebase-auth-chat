@@ -110,21 +110,28 @@ public class LoginActivity extends BaseActivity {
         pbLoading.setVisibility(loading ? View.VISIBLE : View.GONE);
     }
 
-    public void showInsertNickname(final User user) {
+    public void showInsertUsername(final User user) {
 
-        addAlertDialog.setTitle("Insert your nickname");
+        addAlertDialog.setTitle("Insert your username");
         addAlertDialog.setMessage("Be sure to enter");
 
-        final EditText etNickname = new EditText(this);
-        addAlertDialog.setView(etNickname);
+        final EditText etUsername = new EditText(this);
+        addAlertDialog.setView(etUsername);
 
         addAlertDialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
-                presenter.createUser(user, etNickname.getText().toString());
+                String username = etUsername.getText().toString();
+                dialog.dismiss();
+                presenter.createUser(user, username);
             }
         });
 
         addAlertDialog.show();
+    }
+
+    public void showExistUsername(User user, String username) {
+        Toast.makeText(this, "Exist username" + username, Toast.LENGTH_LONG).show();
+        showInsertUsername(user);
     }
 
     @Override
