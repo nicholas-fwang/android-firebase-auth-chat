@@ -6,22 +6,26 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp">
 
-
-    <ImageView
-        android:id="@+id/ivAvatar"
-        android:src="@drawable/ic_not_profile"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true" />
-
     <TextView
-        android:id="@+id/tvMessage"
+        android:id="@+id/tvReceive"
         android:layout_width="wrap_content"
-        android:layout_height="36dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
-        android:layout_toRightOf="@id/ivAvatar"
+        android:layout_marginRight="8dp"
+        android:layout_alignParentLeft="true"
         android:gravity="center"
         android:textSize="24dp"
+        android:visibility="gone"
+        android:text="Message"/>
+    <TextView
+        android:id="@+id/tvSend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:textSize="24dp"
+        android:visibility="gone"
         android:text="Message"/>
 </RelativeLayout>

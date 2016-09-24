@@ -18,6 +18,9 @@ public class UserService {
     }
 
     public void createUser(User user) {
+        if(user.getPhoto_url() == null) {
+            user.setPhoto_url("NOT");
+        }
         databaseRef.child("users").child(user.getUid()).setValue(user);
         databaseRef.child("usernames").child(user.getUsername()).setValue(user);
 

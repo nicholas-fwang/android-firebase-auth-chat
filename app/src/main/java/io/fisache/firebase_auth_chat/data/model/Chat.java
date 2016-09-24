@@ -2,35 +2,29 @@ package io.fisache.firebase_auth_chat.data.model;
 
 import android.support.annotation.NonNull;
 
+import com.google.firebase.database.Exclude;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class Chat {
-    @NonNull String uid;
-    String userUid;
+    String username;
     String content;
 
     public Chat() {
     }
 
-    public Chat(@NonNull String uid, String userUid, String content) {
-        this.uid = uid;
-        this.userUid = userUid;
+    public Chat(String username, String content) {
+        this.username = username;
         this.content = content;
     }
 
-    @NonNull
-    public String getUid() {
-        return uid;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUid(@NonNull String uid) {
-        this.uid = uid;
-    }
-
-    public String getUserUid() {
-        return userUid;
-    }
-
-    public void setUserUid(String userUid) {
-        this.userUid = userUid;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getContent() {
@@ -39,5 +33,14 @@ public class Chat {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    @Exclude
+    public Map<String, Object> toMap() {
+        HashMap<String, Object> result = new HashMap<>();
+        result.put("username", username);
+        result.put("content", content);
+
+        return result;
     }
 }

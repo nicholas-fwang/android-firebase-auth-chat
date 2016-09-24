@@ -18,11 +18,11 @@ public class FriendsService {
         this.databaseRef = FirebaseDatabase.getInstance().getReference();
     }
 
-    // TODO : CRUD
     public DatabaseReference getFriends() {
         return databaseRef.child("friends").child(user.getUsername());
     }
 
+    // TODO
     public void getFriend(String username) {
 
     }
@@ -36,10 +36,12 @@ public class FriendsService {
                 .setValue(friend);
     }
 
+    // TODO
     public void updateFriend(Friend friend) {
 
     }
 
+    // TODO
     public void deleteFriend(String username) {
 
     }

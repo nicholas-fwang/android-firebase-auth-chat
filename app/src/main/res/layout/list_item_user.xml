@@ -7,6 +7,14 @@
     android:paddingRight="16dp"
     android:paddingTop="4dp">
 
+    <ImageView
+        android:id="@+id/ivAvatar"
+        android:src="@drawable/ic_not_profile"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
     <TextView
         android:id="@+id/tvUser"
         android:layout_width="wrap_content"
@@ -15,13 +23,5 @@
         android:layout_toRightOf="@id/ivAvatar"
         android:gravity="center"
         android:textSize="24dp"
-        android:text="Nickname"/>
-
-    <ImageView
-        android:id="@+id/ivAvatar"
-        android:src="@drawable/ic_not_profile"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:text="Username"/>
 </RelativeLayout>

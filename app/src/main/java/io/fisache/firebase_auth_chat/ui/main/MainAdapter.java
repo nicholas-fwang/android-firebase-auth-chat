@@ -64,4 +64,8 @@ public class MainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             Log.d("fisache", "onFriendChanged null");
         }
     }
+
+    public void clearList() {
+        friends.clear();
+    }
 }

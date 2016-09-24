@@ -26,6 +26,7 @@ import io.fisache.firebase_auth_chat.base.BaseActivity;
 import io.fisache.firebase_auth_chat.base.BaseApplication;
 import io.fisache.firebase_auth_chat.data.model.Friend;
 import io.fisache.firebase_auth_chat.data.model.User;
+import io.fisache.firebase_auth_chat.ui.chat.ChatActivity;
 import io.fisache.firebase_auth_chat.ui.login.LoginActivity;
 
 public class MainActivity extends BaseActivity {
@@ -76,6 +77,12 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
+    protected void onPause() {
+        super.onPause();
+        mainAdapter.clearList();
+    }
+
+    @Override
     protected void onStop() {
         super.onStop();
         presenter.unsubscribe();
@@ -96,6 +103,7 @@ public class MainActivity extends BaseActivity {
 
     public void onUserItemClicked(Friend friend) {
         // TODO : go chat room
+        ChatActivity.startWithFriend(this, friend);
     }
 
     public void showAddedFriend(Friend friend) {
