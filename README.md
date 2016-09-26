@@ -10,7 +10,8 @@ You must refer to https://firebase.google.com/docs/android/setup for `Firebase`
 
 https://github.com/firebase/quickstart-android
 <pre>
-- Use Firebase Auth
+- Use Firebase Auth.
+- Use Firebase Realtime Database.
 </pre>
 <br />
 https://github.com/frogermcs/GithubClient
@@ -36,13 +37,17 @@ google play, facebook sdk, and guava <br />
 
 # Architecture
 - android-firebase-auth-chat MVP Architecture <br />
-TODO
+![ScreenShot](https://github.com/fisache/fisache/blob/master/firebase-auth-chat/firebase-auth-chat-mvp.png)
 
 - Dagger Object Graph
-TODO
+![ScreenShot](https://github.com/fisache/fisache/blob/master/firebase-auth-chat/firebase-auth-chat-object-graph.png)
+
+- Firebase Database Graph
+![ScreenShot](https://github.com/fisache/fisache/blob/master/firebase-auth-chat/firebase-auth-chat-database.png)
 
 # Activity
-TODO
+- Sequence Diagram
+![ScreenShot](https://github.com/fisache/fisache/blob/master/firebase-auth-chat/firebase-auth-chat-sequence.png)
 
 # Test
 TODO
