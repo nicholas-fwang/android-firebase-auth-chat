@@ -1,11 +1,13 @@
 package io.fisache.firebase_auth_chat.ui.chat;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -69,6 +71,8 @@ public class ChatActivity extends BaseActivity {
     public void onClickSend() {
         String content = etMessage.getText().toString();
         etMessage.setText("");
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(getWindow().getCurrentFocus().getWindowToken(), 0);
         presenter.setChat(content);
     }
 

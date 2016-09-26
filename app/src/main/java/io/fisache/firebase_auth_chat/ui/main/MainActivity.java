@@ -102,7 +102,6 @@ public class MainActivity extends BaseActivity {
     }
 
     public void onUserItemClicked(Friend friend) {
-        // TODO : go chat room
         ChatActivity.startWithFriend(this, friend);
     }
 
